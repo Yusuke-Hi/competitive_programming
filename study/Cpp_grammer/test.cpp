@@ -1,9 +1,19 @@
 #include <bits/stdc++.h>
 using namespace std;
 int main() {
-    for (int k=-1; k<2; k++){
-        for (int l=-1; l<2; l++){
-            cout << k << ", " << l << endl;
+    int H, W;
+    cin >> H >> W;
+    vector<vector<char>> data(H, vector<char>(W));
+    for (int i=0; i<H; i++){
+        for (int j=0; j<W; j++){
+            cin >> data.at(i).at(j);
         }
+    }
+    cout << "---------------" << endl;
+    for (int i=0; i<H; i++){
+        for (int j=0; j<W; j++){
+            cout << data.at(i).at(j);
+        }
+        cout << endl;
     }
 }

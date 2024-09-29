@@ -1,10 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
 int main() {
-    vector<int> data = {1,2,3,4};
-    int x = 0;
-    for (int i = 0; i < data.size(); i++){
-        x = max(x, data.at(i));
+    set<int> S;
+    S.insert(5);
+    S.insert(8);
+    S.insert(1);
+    /*
+    for (int i = 0; i < S.size(); i++){
+        cout << S.at(i) << endl;
     }
-    cout << x << endl;
+    */
+    cout << "-----------" << endl;
+    for (int s : S){
+        cout << s << endl;
+    }
 }

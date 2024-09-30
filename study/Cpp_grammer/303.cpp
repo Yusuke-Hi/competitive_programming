@@ -4,16 +4,21 @@ int main() {
     int N, x;
     cin >> N;
     map<int, int> data;
+    data[0] = 0;
+    set<int> S;
     for (int i = 0; i < N; i++){
         cin >> x;
+        S.insert(x);
         data[x]++;
     }
     int max_x = 0;
-    for (int i = 0; i < N - 1; i++){
-        //cout << i << " " << data[i] << endl;
-        if (data[i] < data[i+1]){
-            max_x = i + 1;
+    if (S.size() != 0){
+        for (int x : S){
+            if (data.at(x) > data.at(max_x)){
+                max_x = x;
+            }
         }
+        cout << max_x << " " << data.at(max_x) << endl;
     }
-    cout << max_x << " " << data.at(max_x) << endl;
+    
 }

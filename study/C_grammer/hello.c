@@ -1,6 +1,11 @@
 #include<stdio.h>
 int main(void){
-    printf("hello\nworld\n");
-    printf("hello\rworld");
-    return 0;
+    int i = 5;
+    int *p = &i;
+    int j = *p;
+    printf("i:%d\n", i);
+    printf("p:%p\n", p);
+    printf("*p:%d\n", *p);
+    *p = 10;
+    printf("i:%d, j:%d\n", i, j);
 }

@@ -4,6 +4,6 @@ int main(void)
 {
 	int i;
 	printf("整数を入力してください\n");
-	scanf_s("%d", &i);
+	scanf("aaa%d", &i);
 	printf("%dが入力されました\n", i);
 }

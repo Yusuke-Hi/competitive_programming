@@ -1,8 +1,8 @@
 #include <stdio.h>
 
-void func(    )
+void func(int *p)
 {
-	 *= 10;
+	 *p *= 10;
 }
 
 int main(void)

@@ -26,7 +26,7 @@ void printout()
 	printf("\n");
 }
 
-void main()
+int main()
 {
 	push(5); printout();
 	push(9); printout();
@@ -34,4 +34,5 @@ void main()
 	printf("pop %d\n", pop()); printout();
 	printf("pop %d\n", pop()); printout();
 	printf("pop %d\n", pop()); printout();
+	return 0;
 }

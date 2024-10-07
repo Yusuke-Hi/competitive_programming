@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define TEST
+//#define TEST
 
 int main(void)
 {

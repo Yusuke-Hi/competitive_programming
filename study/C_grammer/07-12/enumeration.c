@@ -4,7 +4,7 @@ enum Size { S, M, L, XL };
 
 int main(void)
 {
-	enum Size s = XL;
+	enum Size s = L;
 	printf("sの値は%d\n", s);
 
 	switch (s) {

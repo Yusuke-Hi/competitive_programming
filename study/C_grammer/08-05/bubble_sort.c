@@ -17,7 +17,7 @@ int main(void)
 
 	for (int i = 0; i < DATA_NUM - 1; i++) {
 		for (int j = DATA_NUM - 1; j > i; j--) {
-			if (data[j] < data[j - 1]) {
+			if (data[j] > data[j - 1]) {
 				int tmp = data[j];
 				data[j] = data[j - 1];
 				data[j - 1] = tmp;

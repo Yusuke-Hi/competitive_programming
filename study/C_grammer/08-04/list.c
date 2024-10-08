@@ -32,4 +32,7 @@ int main(void) {
 	Node new_node = { "not", &n2 };
 	n1.next = &new_node;
 	printout();
+
+	n0.next = &new_node;
+	printout();
 }

@@ -5,7 +5,7 @@ int data[] = { 1, 7, 11, 12, 33, 57, 63, 72, 89, 99 };
 
 int main(void)
 {
-	int target = 57;
+	int target = 6;
 	int left_index = 0;
 	int right_index = DATA_NUM - 1;
 	int middle_index = 0;

@@ -1,7 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
 int main() {
-    for (int i = 0; i < 10; i++){
-        cout << (1 << i) << endl;
+    int N, K, result = 0;
+    cin >> N >> K;
+    int data[N];
+    for (int i = 0; i < N; i++) cin >> data[i];
+    
+    for (int i = 0; i < N; i++){
+        bitset<int> bs();
+        
     }
+
+    cout << result << endl;
 }

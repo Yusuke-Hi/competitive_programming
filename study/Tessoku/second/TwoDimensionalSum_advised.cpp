@@ -5,26 +5,6 @@ int main() {
     int H, W;
     cin >> H >> W;
     vector<vector<int>> cumu1(H+1, vector<int>(W+1)), cumu2(H+1, vector<int>(W+1));
-    
-    //display
-    /*
-    for (int i = 1; i <= H; i++){
-        for (int j = 1; j <= W; j++) cout << cumu1.at(i).at(j) << " ";
-        cout << endl;
-    }
-    for (int i = 1; i <= H; i++){
-        for (int j = 1; j <= W; j++) cout << cumu2.at(i).at(j) << " ";
-        cout << endl;
-    }
-    */
-    int Q;
-    cin >> Q;
-    vector<vector<int>> order(Q, vector<int>(4));
-    for (int k = 0; k < Q; k++){
-        for (int l = 0; l < 4; l++){
-            cin >> order.at(k).at(l);
-        }
-    }
 
     int tmp, num;
     //cumulative col direction
@@ -43,6 +23,28 @@ int main() {
             else cumu2.at(i).at(j) = cumu2.at(i - 1).at(j) + cumu1.at(i).at(j);
         }
     }
+
+    int Q;
+    cin >> Q;
+    vector<vector<int>> order(Q, vector<int>(4, 0));
+    for (int k = 0; k < Q; k++){
+        for (int l = 0; l < 4; l++){
+            cin >> order.at(k).at(l);
+        }
+    }
+
+    //display
+    /*
+    for (int i = 1; i <= H; i++){
+        for (int j = 1; j <= W; j++) cout << cumu1.at(i).at(j) << " ";
+        cout << endl;
+    }
+    for (int i = 1; i <= H; i++){
+        for (int j = 1; j <= W; j++) cout << cumu2.at(i).at(j) << " ";
+        cout << endl;
+    }*/
+    
+
     for (int k = 0; k < Q; k++){
         int result = 0;
         int row1 = order.at(k).at(0);
@@ -56,7 +58,7 @@ int main() {
         else second = cumu2.at(row1 - 1).at(col2);
         if (col1 == 1) third = 0;
         else third = cumu2.at(row2).at(col1 - 1);
-        fourth = cumu2.at(row2).at(row2) ;
-        cout << fourth - (first + second + third) << endl;
+        fourth = cumu2.at(row2).at(col2) ;
+        cout << fourth + first - (second + third) << endl;
     }
 }

@@ -108,7 +108,7 @@ void sort(int X[], int size){
     }
 }
 void insert_sort(int X[], int size){
-    for (int i = 2; i < size; i++) sort(X, size);
+    for (int i = 2; i < size; i++) sort(X, i);
 }
 
 int main() {

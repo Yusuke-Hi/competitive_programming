@@ -5,6 +5,8 @@ int main() {
     int n;
     cin >> n;
     bitset<32> s(n);
-    for (int i = 0; i < 32; i++)
-    cout << s << endl;
+    for (int i = 31; i >= 0; i--){
+        if (i != 31 && (i + 1) % 4 == 0) cout << " ";
+        cout << s[i];
+    }
 }

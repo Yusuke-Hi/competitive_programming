@@ -3,26 +3,28 @@ using namespace std;
 
 
 int N;
-double L = 0.0, R = 100000.0;
+double L = 0, R = 100;
 
-bool check_answer(double ab_er){
+bool check_answer(double er){
+    double ab_er = abs(er);
     double re_er = (ab_er) / N;
-    if (ab_er <= 0.001 || re_er <= 0.001) return true;
+    if (ab_er <= 0.000001 || re_er <= 0.000001) return true;
     else false;
 }
 
 double BinarySearch(){
     while(L < R){
         double M = (L + R) / 2;
-        double ab_er = abs(N - (pow(M, 3) + M));
-        bool c_a = check_answer(ab_er);
+        double er = (pow(M, 3) + M) - N;
+        bool c_a = check_answer(er);
+        bool size;
         if (c_a == true) return M;
         else {
-            int size = (N < ab_er);
+            size = (er > 0);
             if (size) R = M;
-            else L = M + 0.0000001;
+            else L = M;
         }
-        cout << size << " " << "L: " << L << " " << "R: " << R <<" " << "M: " << M << endl;
+        //cout << size << " " << "L: " << L << " " << "R: " << R <<" " << "M: " << M << endl;
     }
     return L;
 }
@@ -30,5 +32,6 @@ double BinarySearch(){
 int main() {
     cin >> N;
     double ans = BinarySearch();
-    cout << ans << endl;
+    printf("%.12lf\n", ans);
+    //cout << pow(ans, 3) + ans - N << endl;
 }

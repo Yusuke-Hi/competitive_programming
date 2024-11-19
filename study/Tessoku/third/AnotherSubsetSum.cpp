@@ -6,12 +6,9 @@ int main() {
     cin >> N >> K;
     int A[N];
     for (int i = 0; i < N; i++) cin >> A[i];
-    int cnt = 0;
-    for (int i = 0; i < pow(2, N); i++){
-        cnt++;
-        bitset<10> s(i);
-        //cout << s << endl;
-        
+    
+    for (int i = 0; i < N ; i++){
+        bitset<3> bs(i);
+        cout << bs << endl;
     }
-    cout << cnt;
 }

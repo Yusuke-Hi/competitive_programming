@@ -22,32 +22,7 @@ int main() {
             }
         }
     }
-
-    /*
     if (dp[N][S] == true) cout << "Yes" << endl;
     else cout << "No" << endl;
-    */
 
-    if (dp[N][S] == false){
-        cout << -1 << endl;
-        return 0;
-    }
-
-    vector<int> ans;
-    pair<int, int> pos = make_pair(N, S);
-    while(pos.second > 0){
-        if (dp[pos.first - 1][pos.second] == true) pos.first--;
-        else{
-            ans.push_back(pos.first);
-            pos.second -= A[pos.first];
-            pos.first--;
-        }
-    }
-    reverse(ans.begin(), ans.end());
-    cout << ans.size() << endl;
-    for (int i = 0; i < ans.size(); i++){
-        if (i == 0) cout << ans[i];
-        else cout << " " << ans[i];
-    }
-    cout << endl;
 }

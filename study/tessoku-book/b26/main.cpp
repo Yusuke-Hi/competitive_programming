@@ -5,15 +5,23 @@ int main() {
     int n;
     cin >> n;
 
-    bool isPrime[n + 1];
-    for (int j = 2; j < n + 1; j++) isPrime[j] = true;
-    for (int i = 2; i * i < n; i++){
-        for (int j = 2; j < n + 1; j++){
-            if (j % i != 0) isPrime[j] = false;
+    vector<bool> is_prime(n + 1, true); // 素数フラグ（初期値はすべて true）
+    is_prime[0] = is_prime[1] = false;  // 0 と 1 は素数ではない
+
+    for (int i = 2; i * i <= n; i++) {
+        if (is_prime[i]) { // 素数の場合のみ篩を実行
+            for (int j = i * i; j <= n; j += i) {
+                is_prime[j] = false; // i の倍数を素数ではないとする
+            }
         }
     }
 
-    for (int j = 2; j < n + 1; j++){
-        if (isPrime[j] = true) cout << j << endl;
+    // 結果を出力
+    for (int i = 2; i <= n; i++) {
+        if (is_prime[i]) {
+            cout << i << endl;
+        }
     }
+
+    return 0;
 }

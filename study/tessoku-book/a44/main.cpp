@@ -13,14 +13,14 @@ int main() {
         cin >> op;
         if (op == 1){
             cin >> x >> y;
-            if (state == 0) a.at(x - 1) = y;
-            else a.at(n)
-            }
+            if (state % 2 == 0) a.at(x - 1) = y;
+            else a.at(n - x) = y;
         }
-        else if(op == 2) state = 1;
+        else if(op == 2) state++;
         else{
             cin >> x;
-            cout << a.at(x - 1) << endl;
+            if (state % 2 == 0) cout << a.at(x - 1) << endl;
+            else cout << a.at(n - x) << endl;
         }
     }
 }

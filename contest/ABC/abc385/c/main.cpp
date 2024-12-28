@@ -9,10 +9,11 @@ int main() {
 
     set<int> s;
     for (int i = 0; i < n; i++) s.insert(h.at(i));
-    for (auto it = s.begin(); it != s.end(); it++) cout << *it << " ";
-    cout << endl;
-/*
-    int ans = 1;
-    for (int )
-    */
+    //for (auto it = s.begin(); it != s.end(); it++) cout << *it << " ";
+    //cout << endl;
+
+    int ans = 0;
+    for (auto it = s.begin(); it != s.end(); it++){
+
+    }
 }

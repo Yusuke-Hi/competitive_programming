@@ -2,30 +2,26 @@
 using namespace std;
 
 int main() {
-    int n, d;
+    long long n, d, x, y;
     cin >> n >> d;
-    vector<pair<int, int>> jobs(n);
-    for (int i = 1; i < n + 1; i++) cin >> jobs[i].first >> jobs[i].second;
-    sort(jobs.begin(), jobs.end());
-
-    vector<int> tmp;
-    int current_t = 1;
-    long long ans = 0;
-    //i = 0から
-    for (int i = 1; i < n + 1; i++){
-        if (current_t < jobs[i].first && (!tmp.empty())){
-            sort(tmp.begin(), tmp.end());
-            ans += tmp.at(tmp.size() - 1);
-            tmp.pop_back();
-        }
-        tmp.push_back(jobs[i].second);
-        current_t = jobs[i].first;
-        if (i == n && jobs[i - 1].first < jobs[i].first){
-            sort(tmp.begin(), tmp.end());
-            ans += tmp.at(tmp.size() - 1);
-            tmp.pop_back();
-        }
+    vector<pair<long, long>> xy;
+    for (long long i = 0; i < n; i++){
+        cin >> x >> y;
+        xy.emplace_back(x, y);
     }
+    sort(xy.begin(), xy.end());
+    //for (int i = 0; i < xy.size(); i++) cout << xy[i].first << " " << xy[i].second << endl;
 
+    priority_queue<long long> pq;
+    long long current_day = xy[0].first, ans = 0;
+    for (long long i = 0; i < n; i++){
+        if (xy[i].first > current_day){
+            ans += pq.top();
+            pq.pop();
+            current_day = xy[i].first;
+        }
+        pq.push(xy[i].second);
+        if (i == n - 1) ans += pq.top();
+    }
     cout << ans << endl;
 }

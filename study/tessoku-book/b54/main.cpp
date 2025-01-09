@@ -10,7 +10,7 @@ int main() {
     map<int, int> m;
     for (int i = 1; i <= n; i++) m[a[i]]++;
     
-    int ans = 0;
+    long long ans = 0;
     for (const auto& [key, value] : m){
         if (value == 1) continue;
         else {

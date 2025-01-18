@@ -3,22 +3,24 @@ using namespace std;
 
 
 
-int inout(int &i, int &j, int &r){
-    if (sqrt(pow((i + 0.5), 2) + pow((j + 0.5), 2)) < r){
-        return 1;
-    }
-    else return 0;
+bool inout(long long &i, long long &j, long long &r){
+    return (i + 0.5)*(i + 0.5) + (j + 0.5)*(j + 0.5) <= r*r;
 }
 
 int main() {
-    int r;
+    long long r;
     cin >> r;
 
     long long ans = 1 + (r - 1) * 4;
     long long other = 0;
-    for (int i = 1; i < r;i++){
-        for (int j = 1; j < r; j++){
-            other += inout(i, j, r);
+    long long j = r - 1;
+    for (long long i = 1; i < r;i++){
+        while (true){
+            if (inout(i, j, r) == true){
+                other += j;
+                break;
+            }
+            else j--;
         }
     }
     cout << ans + other * 4 << endl;

@@ -17,12 +17,13 @@ int main() {
             l_li.push_back(l);
         }
         else if (query == 2){
-            k_offset += l_li.at(h_offset);
+            //k_offset += l_li.at(h_offset);
             h_offset++;
         }
         else{
             cin >> k;
-            cout << head.at(h_offset + k - 1) - k_offset << endl;
+            //cout << head.at(h_offset + k - 1) - k_offset << endl;
+            cout << head.at(h_offset + k - 1) - head.at(h_offset) << endl;
         }
     }
 }

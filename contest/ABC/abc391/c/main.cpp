@@ -15,26 +15,23 @@ int main() {
     int n, q;
     cin >> n >> q;
     
-    // int hive[n];
-    // for (int i = 0; i < n; i++) hive[i] = 1;
-
-    vector<vector<int>> hive(n + 1, vector<int>());
-    for (int i = 1; i <= n; i++) hive.at(i).push_back(i);
-
+    int pos[n + 1], cnt[n + 1];
     for (int i = 1; i <= n; i++){
-        for (int j = 0; j <= hive.at(i).size(); j++){
-            cout << hive.at(i).at(j) << endl;
-        }
+        pos[i] = i;
+        cnt[i] = 1;
     }
-
-    // int ans = 0;
-    // int query, p, h;
-    // for (int i = 0; i < q; i++){
-    //     cin >> query;
-    //     if (query == 1){
-    //         cin >> p >> h;
-            
-    //     }
-    //     else cout << ans << endl;
-    // }
+    int ans = 0;
+    for (int i = 0; i < q; i++){
+        int query, p, h;
+        cin >> query;
+        if (query == 1){
+            cin >> p >> h;
+            if (cnt[pos[p]] == 2) ans--; 
+            cnt[pos[p]]--;
+            pos[p] = h;
+            if (cnt[pos[p]] == 1) ans++;
+            cnt[pos[p]]++;
+        }
+        else cout << ans << endl;
+    }
 }

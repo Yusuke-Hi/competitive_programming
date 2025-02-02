@@ -23,21 +23,24 @@ int main() {
     //     cout << endl;
     // }
 
-    // vector<vector<int>> cumu(h + 1, vector<int>(w + 1, 0));
+    vector<vector<int>> cumu(h + 1, vector<int>(w + 1, 0));
     for (int i = 1; i <= h; i++){
         for (int j = 1; j <= w; j++){
-            reg.at(i).at(j) += reg.at(i).at(j - 1);
+            cumu.at(i).at(j) = cumu.at(i).at(j - 1) + reg.at(i).at(j);
         }
     }
     for (int j = 1; j <= w; j++){
         for (int i = 1; i <= h; i++){
-            reg.at(i).at(j) += reg.at(i - 1).at(j);
+            cumu.at(i).at(j) = cumu.at(i - 1).at(j) + cumu.at(i).at(j);
         }
     }
 
     for (int i = 1; i <= h; i++){
         for (int j = 1; j <= w; j++){
-            cout << reg.at(i).at(j) << " ";
+
+            // cout << reg.at(i).at(j) << " ";
+            if (j >= 2) cout << " ";
+            cout << cumu.at(i).at(j);
         }
         cout << endl;
     }

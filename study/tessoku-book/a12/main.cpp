@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int check(int n, int s, int *a){
-    int total = 0;
+long long check(int n, int s, int *a){
+    long long total = 0;
     for (int i = 1; i <= n; i++){
         total += s / a[i];
     }

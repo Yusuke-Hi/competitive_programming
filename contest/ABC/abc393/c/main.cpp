@@ -16,12 +16,11 @@ int main() {
         int s = min(u, v), b = max(u, v);
         if (um.find(s) == um.end()){
           um[s].insert(b);
-          ans++;
         }
         else if(um.at(s).find(b) == um.at(s).end()){
           um[s].insert(b);
-          ans++;
         }
+        else ans++;
       }
     }
 

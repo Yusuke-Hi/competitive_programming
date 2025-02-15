@@ -18,6 +18,7 @@ int main() {
         numt++;
         if (numt == num0 / 2 + 1){
           cpos = i;
+          break;
         }
       }
     }
@@ -36,22 +37,5 @@ int main() {
         cpos_r++;
       }
     }
-
-    // long long ans = 0;
-    // for (int i = 1; i < n/2 + 1; i++){
-    //   if (s[i - 1] == '1' && s[i] == '0'){
-    //     s[i - 1] = '0';
-    //     s[i] = '1';
-    //     ans++; 
-    //   }
-    // }
-    // for (int i = n - 1; i > n/2; i--){
-    //   if (s[i + 1] == '1' && s[i] == '0'){
-    //     s[i + 1] = '0';
-    //     s[i] = '1';
-    //     ans++;
-    //   }
-    // }
-    // cout << s << endl;
     cout << ans << endl;
 }
